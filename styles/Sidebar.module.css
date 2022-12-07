@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    flex-flow: column nowrap;
+    /* height: 100%; */
+    max-width: 90vw;
+    background-color: brown;
+    /* margin: 0 auto; */
+}
+
+.navList{
+    display: flex;
+    /* background-color: brown; */
+    color: aliceblue;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
