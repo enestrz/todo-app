@@ -1,7 +1,8 @@
 import "@fontsource/solway";
-import Layout from "../components/layout";
+import "@fontsource/jost";
 import "../styles/reset.css";
 import "../styles/globals.css";
+import Layout from "../components/layout";
 import { IconContext } from "react-icons";
 import { Provider } from "react-redux";
 import store from "../reducers/store";
