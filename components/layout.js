@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 export default function Layout({ children }) {
     return (
         <div className="wrapper">
-            <Navbar />
+            {/* <Navbar /> */}
             <Sidebar />
             {children}
         </div>

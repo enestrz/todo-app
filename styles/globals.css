@@ -1,4 +1,4 @@
-@import-normalize;
+
 
 :root{
   --font-solway: 'Solway', serif;
@@ -46,7 +46,7 @@ li {
   }
   body {
     color: rgba(255, 255, 255, 0.95);
-    background: black;
+    background: #111;
   }
 }
 
