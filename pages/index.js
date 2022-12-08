@@ -16,36 +16,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.container}>
-                <div className={styles.tabContainer}>
-                    <div className={styles.tabItem}>
-                        <span>Todos</span>
-                    </div>
-                    <div className={styles.tabItem}>
-                        <span>Notes</span>
-                    </div>
-                </div>
-                {/* <MdAdd className={styles.addButton} /> */}
-                <div className={styles.todoContainer}>
-                    <h1>This is List container</h1>
-                    <h2>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Id accusamus ipsam enim magni excepturi voluptatibus
-                        amet repudiandae fuga asperiores porro iure, optio animi
-                        et? Maxime a iusto provident modi nesciunt?
-                    </h2>
-                </div>
-                <div className={styles.notesContainer}>
-                    <h1>This is Notes Container</h1>
-                    <h2>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Hic architecto maiores eos soluta consequuntur
-                        facilis, laudantium aliquid odit veniam. A pariatur, vel
-                        eum necessitatibus expedita eveniet quaerat voluptas
-                        iure eos.
-                    </h2>
-                </div>
-            </main>
+            <main className={styles.container}></main>
         </>
     );
 }

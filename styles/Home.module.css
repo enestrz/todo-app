@@ -1,6 +1,5 @@
    /* Home Page Styling */
 
-
   .container{ /* Main Container */
     display: flex;
     flex-direction: column;
@@ -9,49 +8,4 @@
     width: 100%;
     /* background-color: #2f2f2f; */
     flex-grow: 1;
-  }
-
-
-  .tabContainer{
-    display: flex;
-    flex-wrap: row nowrap;
-    align-items: center;
-    color: white;
-    width: 90%;
-    height: 50px;
-    margin: 15px 0px;
-    /* padding: 0px 0px 0px 0px; */
-    background-color: rgb(37, 37, 37);
-    filter: drop-shadow(10px black);
-
-  }
-
-  .tabItem{
-    flex: 1;
-    text-align: center;
-    border-bottom: 2px solid rgb(37, 37, 37);
-    padding: 13px 0;
-    font-weight: 500;
-    letter-spacing: 0.1px;
-    font-family: var(--font-solway);
-    cursor: pointer;
-    /* padding-bottom: 20px; */
-  }
-
-  .tabItem:hover{
-    border-bottom: 2px solid rgba(255, 255, 255, 0.582);
-  }
-
-
-  .addButton{
-    display: block;
-    color: white;
-    /* background-color: black; */
-    font-size: 2rem;
-    cursor: pointer;
-  }
-
-  .addButton:hover{
-    background-color: black;
-    border-radius: 20%;
   }
