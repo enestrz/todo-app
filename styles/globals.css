@@ -25,6 +25,14 @@ a {
   box-sizing: border-box;
 }
 
+.item-hide{
+  display: none;
+}
+
+.item-show{
+  display: block;
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {

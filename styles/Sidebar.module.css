@@ -6,7 +6,7 @@
     padding-left: 5px;
     padding-right: 5px;
     border-right: solid 1px black;
-    width: 220px;
+    min-width: 220px;
     color: gray;
     font-size: 0.9rem;
     gap: 40px;
@@ -74,6 +74,7 @@
 
 .listItemContainer {
     display: flex;
+    position: relative;
     flex-flow: row nowrap;
     align-items: center;
     width: 100%;
@@ -94,3 +95,27 @@
     flex: 1;
     cursor: pointer;
 }
+
+.listItemDropdown{
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    margin-top: 25px;
+    background-color: rgb(53, 53, 53);
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 5px;
+    /* gap: 5px; */
+    z-index: 1;
+
+}
+
+
+.listItemDropdownActive{
+    display: block;
+
+}
+
+

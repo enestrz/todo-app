@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "../styles/Sidebar.module.css";
-import { motion } from "framer-motion";
 import { MdAccountBox, MdArrowDropDown, MdAdd } from "react-icons/md";
-import { HiDotsVertical } from "react-icons/hi";
+import { noteList } from "../reducers/sampleData";
+import ListItem from "./ListItem";
 
 export default function Sidebar() {
     return (
-        <motion.nav className={styles.sidebarContainer}>
+        <nav className={styles.sidebarContainer}>
             {/* User section */}
             <div className={styles.userSection}>
                 {/* This will be change to user image */}
@@ -23,30 +23,16 @@ export default function Sidebar() {
 
             {/* List section */}
             <div className={styles.listSection}>
-                <div className={styles.listItemContainer}>
-                    <span>Watch List</span>
-                    <HiDotsVertical className={styles.listItemIcon} />
-                </div>
-                <div className={styles.listItemContainer}>
-                    <span>Lorem, ipsum dolor.</span>
-                    <HiDotsVertical className={styles.listItemIcon} />
-                </div>
-                <div className={styles.listItemContainer}>
-                    <span>Lorem ipsum dolor sit.</span>
-                    <HiDotsVertical className={styles.listItemIcon} />
-                </div>
-                <div className={styles.listItemContainer}>
-                    <span>Lorem ipsum dolor sit amet.</span>
-                    <HiDotsVertical className={styles.listItemIcon} />
-                </div>
-                <div className={styles.listItemContainer}>
-                    <span>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Esse, quas?
-                    </span>
-                    <HiDotsVertical className={styles.listItemIcon} />
-                </div>
+                {noteList.map((note) => (
+                    <ListItem
+                        key={note.id}
+                        id={note.id}
+                        title={note.title}
+                        content={note.content}
+                        date={note.date}
+                    />
+                ))}
             </div>
-        </motion.nav>
+        </nav>
     );
 }
