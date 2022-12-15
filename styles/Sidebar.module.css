@@ -35,7 +35,6 @@
     color: white;
 }
 
-
 .userDropdownIcon {
     margin-left: auto;
     font-size: 2.1rem;
@@ -43,7 +42,9 @@
     color: rgb(160, 160, 160);
 }
 
-/* Add New Note Section */
+
+
+/* ADD NEW NOTE SECTION */
 .addNewSection{
     display: flex;
     flex-flow: row nowrap;
@@ -53,18 +54,109 @@
     user-select: none;
 }
 
-/* !!! Usefull for shortens text !!! */
-/* .addNewSection p{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-} */
-
 .addNewButton {
     font-size: 1.2rem;
 }
 
-/* Note list section */
+.dialogOverlay {
+    inset: 0;
+    position: fixed;
+}
+
+.dialogContent {
+    background-color: rgba(0, 0, 0, 0.315);
+    color: aliceblue;
+    border-radius: 6px;
+    box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 400px;
+    max-height: 85vh;
+    padding: 25px;
+    animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+    
+}
+
+.dialogContent:focus{
+    outline: none;
+}
+
+.dialogContent form{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+}
+
+
+
+.dialogContent form>fieldset{
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1;
+    width: 100%; 
+    gap: 10px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+
+
+.dialogContent input[type=text]{
+    all: unset;
+    flex: 1;
+    border: 2px solid rgba(255, 255, 255, 0.144);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.801);
+    padding: 5px;
+    text-indent: 5px;
+    transition: border-color 0.5s;
+}
+
+.dialogContent input[type=text]:focus{
+    border-color: rgba(0, 255, 255, 0.664);
+}
+
+.closeDialogButton{
+    font-family: inherit;
+    border-radius: 100%;
+    height: 25px;
+    width: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.saveDialogButtonContainer{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.saveDialogButtonContainer button{
+    background-color: transparent;
+    border: 2px solid aqua;
+    font-size: 0.9rem;
+    color: aqua;
+    padding: 8px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all ease-in-out .3s;
+}
+
+.saveDialogButtonContainer button:hover{
+    background-color: rgb(40, 187, 187);
+    color: black;
+    border-color: transparent;
+}
+
+
+/* NOTE LIST SECTION */
 .listSection {
     display: flex;
     flex-flow: column nowrap;
@@ -89,6 +181,10 @@
     cursor: pointer;
 }
 
+.listItemContainer button{
+    all: unset;
+}
+
 .listItemContainer .listItemIcon {
     font-size: 1.05rem;
     margin-left: auto;
@@ -97,25 +193,58 @@
 }
 
 .listItemDropdown{
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: 0;
-    margin-top: 25px;
     background-color: rgb(53, 53, 53);
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 5px;
-    padding: 5px;
-    /* gap: 5px; */
-    z-index: 1;
+    padding: 5px 10px;
+}
 
+.listItemDropdownArrow{
+    fill: rgb(53, 53, 53);
+}
+
+.listItemDropdownItem{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    font-size: 0.8rem;
+    gap: 10px;
+    outline: none;
+}
+
+.listItemDropdownItemIcon{
+    color: rgb(214, 27, 27);
+    font-size: 1.1rem;
 }
 
 
-.listItemDropdownActive{
-    display: block;
+@keyframes overlayShow {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes contentShow {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -48%) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
 
-}
 
-
+/* !!! Usefull for shortens text !!! */
+/* .addNewSection p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+} */

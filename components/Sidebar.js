@@ -1,10 +1,13 @@
-import React from "react";
 import styles from "../styles/Sidebar.module.css";
 import { MdAccountBox, MdArrowDropDown, MdAdd } from "react-icons/md";
-import { noteList } from "../reducers/sampleData";
-import ListItem from "./ListItem";
+import ListItem from "./sidebar/ListItem";
+import { useSelector } from "react-redux";
+
+import AddNewItem from "./sidebar/addNewItem";
 
 export default function Sidebar() {
+    const noteList = useSelector((state) => state.notes.todos);
+
     return (
         <nav className={styles.sidebarContainer}>
             {/* User section */}
@@ -16,10 +19,7 @@ export default function Sidebar() {
             </div>
 
             {/* Add new note section */}
-            <div className={styles.addNewSection}>
-                <MdAdd className={styles.addNewButton} />
-                <span>Add a new note</span>
-            </div>
+            <AddNewItem />
 
             {/* List section */}
             <div className={styles.listSection}>
