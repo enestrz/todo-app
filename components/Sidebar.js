@@ -2,8 +2,8 @@ import styles from "../styles/Sidebar.module.css";
 import { MdAccountBox, MdArrowDropDown, MdAdd } from "react-icons/md";
 import ListItem from "./sidebar/ListItem";
 import { useSelector } from "react-redux";
-
 import AddNewItem from "./sidebar/addNewItem";
+import UserSection from "./sidebar/UserSection";
 
 export default function Sidebar() {
     const noteList = useSelector((state) => state.notes.todos);
@@ -11,13 +11,7 @@ export default function Sidebar() {
     return (
         <nav className={styles.sidebarContainer}>
             {/* User section */}
-            <div className={styles.userSection}>
-                {/* This will be change to user image */}
-                <MdAccountBox className={styles.userImage} />
-                <h5>enestrz</h5>
-                <MdArrowDropDown className={styles.userDropdownIcon} />
-            </div>
-
+            <UserSection />
             {/* Add new note section */}
             <AddNewItem />
 

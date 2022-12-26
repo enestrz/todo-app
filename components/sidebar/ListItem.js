@@ -5,6 +5,8 @@ import { MdDeleteForever } from "react-icons/md";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useDispatch } from "react-redux";
 import { deleteTodo } from "../../reducers/slices/notesSlice";
+import { motion } from "framer-motion";
+import EditItem from "./editItem";
 
 export default function ListItem({ id, title, content, date }) {
     const dispatch = useDispatch();
@@ -15,9 +17,9 @@ export default function ListItem({ id, title, content, date }) {
 
             <DropdownMenu.Root>
                 <DropdownMenu.Trigger asChild>
-                    <button className={styles.listItemIcon}>
+                    <motion.button className={styles.listItemIcon}>
                         <HiDotsVertical />
-                    </button>
+                    </motion.button>
                 </DropdownMenu.Trigger>
 
                 <DropdownMenu.Portal>
@@ -28,6 +30,11 @@ export default function ListItem({ id, title, content, date }) {
                         <DropdownMenu.Arrow
                             className={styles.listItemDropdownArrow}
                         />
+
+                        {/* Edit Item */}
+                        <EditItem />
+
+                        {/* Delete Item */}
                         <DropdownMenu.Item
                             className={styles.listItemDropdownItem}
                             onClick={() => dispatch(deleteTodo(id))}

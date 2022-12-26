@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./navbar";
 import Sidebar from "./Sidebar";
 import styles from "../styles/Layout.module.css";
+import NotificationBar from "./utilities/NotificationBar";
 
 export default function Layout({ children }) {
     return (
@@ -9,6 +10,7 @@ export default function Layout({ children }) {
             {/* <Navbar /> */}
             <Sidebar />
             {children}
+            <NotificationBar />
         </div>
     );
 }

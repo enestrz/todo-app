@@ -1,10 +1,12 @@
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import styles from "../../styles/Sidebar.module.css";
-import { MdAdd, MdClose } from "react-icons/md";
+import { MdAdd } from "react-icons/md";
 import { addNewTodo } from "../../reducers/slices/notesSlice";
+import { addNotification } from "../../reducers/slices/notificationSlice";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
+import Modal from "../utilities/Modal";
 
 const AddNewItem = () => {
     const [newTodoTitle, setNewTodoTitle] = useState("");
@@ -28,67 +30,48 @@ const AddNewItem = () => {
             dispatch(addNewTodo(newTodoItem));
             setNewTodoTitle("");
             setOpen(false);
+            dispatch(
+                addNotification({
+                    id: uuidv4(),
+                    message: "Added successfuly",
+                    type: "success",
+                })
+            );
         }
     }
 
     return (
         <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger asChild>
-                <div
-                    className={styles.addNewSection}
-                    // onClick={() => dispatch(addNewItem())}
-                >
+                <div className={styles.addNewSection}>
                     <MdAdd className={styles.addNewButton} />
                     <span>Add a new note</span>
                 </div>
             </Dialog.Trigger>
-            <Dialog.Portal>
-                <Dialog.Overlay className={styles.dialogOverlay} />
-                <Dialog.Content className={styles.dialogContent}>
-                    <Dialog.Title
-                        style={{
-                            textAlign: "center",
-                            borderBottom: "2px solid aqua",
-                            fontSize: "1.2rem",
-                        }}
-                    >
-                        New Todo
-                    </Dialog.Title>
 
-                    <form onSubmit={handleSubmit}>
-                        <fieldset className={styles.addNewItemFormGroup}>
-                            <label
-                                className={styles.addNewItemFormLabel}
-                                htmlFor="name"
-                            >
-                                Title:
-                            </label>
-                            <input
-                                placeholder="Enter new title for note"
-                                className={styles.addNewItemFormField}
-                                type="text"
-                                value={newTodoTitle}
-                                onChange={(e) =>
-                                    setNewTodoTitle(e.target.value)
-                                }
-                            />
-                        </fieldset>
-
-                        <div className={styles.saveDialogButtonContainer}>
-                            <button type="submit">Add</button>
-                        </div>
-                    </form>
-
-                    <Dialog.Close>
-                        <MdClose
-                            className={styles.closeDialogButton}
-                            style={{
-                                cursor: "pointer",
-                            }}
+            <Modal title={"New todo"}>
+                <form onSubmit={handleSubmit}>
+                    <fieldset className={styles.addNewItemFormGroup}>
+                        <label
+                            className={styles.addNewItemFormLabel}
+                            htmlFor="name"
+                        >
+                            Title:
+                        </label>
+                        <input
+                            placeholder="Enter new title for note"
+                            className={styles.addNewItemFormField}
+                            type="text"
+                            value={newTodoTitle}
+                            onChange={(e) => setNewTodoTitle(e.target.value)}
                         />
-                    </Dialog.Close>
-                </Dialog.Content>
-            </Dialog.Portal>
+                    </fieldset>
+
+                    <div className={styles.saveDialogButtonContainer}>
+                        <button type="submit">Add</button>
+                    </div>
+                </form>
+            </Modal>
         </Dialog.Root>
     );
 };
