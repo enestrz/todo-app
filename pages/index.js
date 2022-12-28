@@ -1,7 +1,5 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-// import { motion } from "framer-motion";
-import { MdAdd } from "react-icons/md";
 
 // Hello world
 export default function Home() {

@@ -18,8 +18,19 @@ export const notesSlice = createSlice({
             );
             state.todos = newTodos;
         },
+        editTodoItem: (state, action) => {
+            const newTodos = state.todos.map((item) => {
+                if (action.payload.id === item.id) {
+                    const newItem = { ...item, title: action.payload.newTitle };
+                    return newItem;
+                } else {
+                    return item;
+                }
+            });
+            state.todos = newTodos;
+        },
     },
 });
 
-export const { addNewTodo, deleteTodo } = notesSlice.actions;
+export const { addNewTodo, deleteTodo, editTodoItem } = notesSlice.actions;
 export default notesSlice.reducer;

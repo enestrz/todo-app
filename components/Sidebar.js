@@ -1,5 +1,4 @@
 import styles from "../styles/Sidebar.module.css";
-import { MdAccountBox, MdArrowDropDown, MdAdd } from "react-icons/md";
 import ListItem from "./sidebar/ListItem";
 import { useSelector } from "react-redux";
 import AddNewItem from "./sidebar/addNewItem";

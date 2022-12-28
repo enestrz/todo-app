@@ -10,12 +10,13 @@ import EditItem from "./editItem";
 
 export default function ListItem({ id, title, content, date }) {
     const dispatch = useDispatch();
+    const [isOpen, setIsOpen] = React.useState(false);
 
     return (
         <div className={styles.listItemContainer}>
             <span>{title}</span>
 
-            <DropdownMenu.Root>
+            <DropdownMenu.Root open={isOpen} onOpenChange={setIsOpen}>
                 <DropdownMenu.Trigger asChild>
                     <motion.button className={styles.listItemIcon}>
                         <HiDotsVertical />
@@ -32,7 +33,7 @@ export default function ListItem({ id, title, content, date }) {
                         />
 
                         {/* Edit Item */}
-                        <EditItem />
+                        <EditItem {...{ id, title, setIsOpen }} />
 
                         {/* Delete Item */}
                         <DropdownMenu.Item
