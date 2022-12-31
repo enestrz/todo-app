@@ -1,6 +1,6 @@
 import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import styles from "../../styles/Sidebar.module.css";
+import styles from "./Utilities.module.css";
 import { MdClose } from "react-icons/md";
 
 const Modal = ({ title, children }) => {

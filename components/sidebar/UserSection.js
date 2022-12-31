@@ -1,6 +1,6 @@
 import React from "react";
 import { MdAccountBox, MdArrowDropDown, MdAdd } from "react-icons/md";
-import styles from "../../styles/Sidebar.module.css";
+import styles from "./Sidebar.module.css";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 

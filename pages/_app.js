@@ -17,9 +17,9 @@ function MyApp({ Component, pageProps }) {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 const uid = user.uid;
-                console.log("User logged in, " + uid);
+                // console.log("User logged in, " + uid);
             } else {
-                console.log("No user logged in");
+                // console.log("No user logged in");
             }
         });
     });

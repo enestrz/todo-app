@@ -1,9 +1,9 @@
-
-
 :root{
   --font-solway: 'Solway', serif;
   --font-jost: 'Jost', sans-serif;
 }
+
+/* Global CSS attributes for app */
 
 html,
 body {
@@ -14,6 +14,11 @@ body {
   font-family: var(--font-jost);
   line-height: 1.6;
   font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* text-shadow: rgba(0,0,0,.01) 0 0 1px; */    /* I'm not sure what it is */
+
 }
 
 a {
@@ -25,13 +30,30 @@ a {
   box-sizing: border-box;
 }
 
-.item-hide{
+.nav-link {
+  color: rgba(255, 255, 255, 0.625);
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.nav-link.active{
+  color: rgba(255, 255, 255, 0.87);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.651);
+}
+
+
+/* .item-hide{
   display: none;
 }
 
 .item-show{
   display: block;
-}
+} */
 
 
 @media (prefers-color-scheme: dark) {

@@ -1,0 +1,38 @@
+.container{
+    margin: 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.container h1{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.formContainer{
+    margin: 20px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.formGroup{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formGroup input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}

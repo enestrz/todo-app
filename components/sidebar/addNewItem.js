@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import styles from "../../styles/Sidebar.module.css";
+import styles from "./Sidebar.module.css";
 import { MdAdd } from "react-icons/md";
 import { addNewTodo } from "../../reducers/slices/notesSlice";
 import { addNotification } from "../../reducers/slices/notificationSlice";

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import styles from "../../styles/Sidebar.module.css";
+import React, { useState } from "react";
+import styles from "./Sidebar.module.css";
 import { MdEdit } from "react-icons/md";
 import * as Dialog from "@radix-ui/react-dialog";
 import Modal from "../utilities/Modal";

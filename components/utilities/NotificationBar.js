@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
-import styles from "./NotificationBar.module.css";
+import React, { useEffect } from "react";
+import styles from "./Utilities.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdThumbUpOffAlt, MdThumbDownOffAlt } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
-import {
-    hideNotification,
-    removeNotification,
-} from "../../reducers/slices/notificationSlice";
+import { removeNotification } from "../../reducers/slices/notificationSlice";
 
 const iconSize = 22;
 
@@ -75,35 +72,3 @@ const NotificationBar = () => {
 };
 
 export default NotificationBar;
-
-// import { AnimatePresence, motion } from "framer-motion";
-
-// function Modal() {
-//     const [isVisible, setIsVisible] = useState(false);
-
-//     const showNotification = () => {
-//         setIsVisible(true);
-//     };
-
-//     const hideNotification = () => {
-//         setIsVisible(false);
-//     };
-
-//     return (
-//         <AnimatePresence>
-//             {isVisible && (
-//                 <motion.div
-//                     initial={{ y: -50 }}
-//                     animate={{ y: 0 }}
-//                     exit={{ y: -50 }}
-//                     className="notification-bar"
-//                 >
-//                     <p>This is a notification</p>
-//                     <button onClick={hideNotification}>Close</button>
-//                 </motion.div>
-//             )}
-//         </AnimatePresence>
-//     );
-// }
-
-// export default Modal;

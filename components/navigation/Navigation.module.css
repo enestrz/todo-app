@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+
+/* Common class for link lists */
+.linksContainer{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 25px;
+    
+}
+
+/* .linksContainer a{
+    color: rgba(255, 255, 255, 0.625);
+}
+
+.linksContainer a:hover{
+    color: rgba(255, 255, 255, 0.87);
+} */
+
+.userSection{
+    margin-left: auto;
+}

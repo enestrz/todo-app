@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/Sidebar.module.css";
+import styles from "./Sidebar.module.css";
 import { HiDotsVertical } from "react-icons/hi";
 import { MdDeleteForever } from "react-icons/md";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";

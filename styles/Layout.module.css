@@ -1,6 +1,7 @@
 .layoutContainer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
     height: 100vh;
-    gap: 50px;
 }

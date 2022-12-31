@@ -55,8 +55,7 @@
 }
 
 
-
-/* ADD NEW NOTE SECTION */
+/* ADD NEW & EDIT NOTE SECTION */
 .addNewSection{
     display: flex;
     flex-flow: row nowrap;
@@ -64,7 +63,7 @@
     gap: 5px;
     cursor: pointer;
     user-select: none;
-    transition: all .4s;
+    transition: all .1s;
     border-radius: 5px;
     padding: 5px 0;
 }
@@ -78,40 +77,12 @@
     font-size: 1.2rem;
 }
 
-.dialogOverlay {
-    inset: 0;
-    position: fixed;
-}
 
-.dialogContent {
-    z-index: 50;
-    background-color: rgba(0, 0, 0, 0.315);
-    color: aliceblue;
-    border-radius: 6px;
-    box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90vw;
-    max-width: 400px;
-    max-height: 85vh;
-    padding: 25px;
-    animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-    
-}
-
-.dialogContent:focus{
-    outline: none;
-}
-
-.dialogContent form{
+/* .dialogContent form{
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
 }
-
-
 
 .dialogContent form>fieldset{
     display: flex;
@@ -122,8 +93,6 @@
     align-items: center;
     margin: 20px 0;
 }
-
-
 
 .dialogContent input[type=text]{
     all: unset;
@@ -138,20 +107,8 @@
 
 .dialogContent input[type=text]:focus{
     border-color: rgba(0, 255, 255, 0.664);
-}
+} */
 
-.closeDialogButton{
-    font-family: inherit;
-    border-radius: 100%;
-    height: 25px;
-    width: 35px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
 
 .saveDialogButtonContainer{
     display: flex;
@@ -167,7 +124,7 @@
     padding: 8px 25px;
     border-radius: 5px;
     font-weight: 700;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out .1s;
 }
 
 .saveDialogButtonContainer button:hover{
@@ -193,7 +150,7 @@
     width: 100%;
     padding: 0 5px;
     border-radius: 5px;
-    transition: all .4s;
+    transition: all .1s;
 }
 
 .listItemContainer:hover {
@@ -222,7 +179,7 @@
     justify-content: center;
     align-items: center;
     padding: 5px 1px;
-    transition: all 0.4s;
+    transition: all 0.1s;
 }
 
 .listItemContainer button:hover{
@@ -269,7 +226,7 @@
     gap: 10px;
     outline: none;
     padding: 0 10px ;
-    transition: background-color 1s ease;
+    transition: background-color 0.1s ease;
     border-radius: 5px;
 }
 

@@ -1,8 +1,8 @@
-import styles from "../styles/Sidebar.module.css";
-import ListItem from "./sidebar/ListItem";
+import styles from "./Sidebar.module.css";
+import ListItem from "./ListItem";
 import { useSelector } from "react-redux";
-import AddNewItem from "./sidebar/addNewItem";
-import UserSection from "./sidebar/UserSection";
+import AddNewItem from "./addNewItem";
+import UserSection from "./userSection";
 
 export default function Sidebar() {
     const noteList = useSelector((state) => state.notes.todos);
