@@ -23,16 +23,52 @@
 
 .formGroup{
     display: flex;
-    flex-flow: row wrap;
-    gap: 20px;
+    position: relative;
+    flex-flow: column;
+    gap: 5px;
     justify-content: space-between;
     align-items: center;
+    flex: 1;
+    width: 100%;
 }
 
-.formGroup input{
+.formLabel{
+    display: block;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+    font-size: 0.9rem;
+    padding-left: 10px;
 }
+
+.formErrorMessage{
+    font-size: 0.8rem;
+    color: rgb(243, 27, 27);
+}
+
+.formInput{
+    all: unset;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.144);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.801);
+    padding: 5px;
+    text-indent: 5px;
+    transition: 0.2s ease-in-out;
+}
+
+.formInput:placeholder{
+    opacity: 0;
+}
+
+.formInput:focus{
+    border-color: rgba(0, 255, 255, 0.664);
+}
+
+.formInput:invalid{
+    border-color: rgba(201, 5, 44, 0.664);
+}
+
+
+
+
+
+

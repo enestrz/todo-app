@@ -1,9 +1,11 @@
 .container{
     display: flex;
     flex-direction: row;
-    gap: 25px;
-    margin-top: 20px;
-    font-size: 1.1rem;
+    gap: 10px;
+    font-size: 1rem;
+    padding:20px 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.397);
+    align-items: center;
 }
 
 
@@ -11,18 +13,37 @@
 .linksContainer{
     display: flex;
     flex-flow: row nowrap;
-    gap: 25px;
+    gap: 15px;
     
 }
-
-/* .linksContainer a{
-    color: rgba(255, 255, 255, 0.625);
-}
-
-.linksContainer a:hover{
-    color: rgba(255, 255, 255, 0.87);
-} */
 
 .userSection{
     margin-left: auto;
 }
+
+.menuIcon{
+    cursor: pointer;
+    font-size: 25px;
+}
+
+
+
+@media screen and (min-width: 850px){
+    .container{
+        font-size: 1.1rem;
+        gap: 20px;
+        padding: 20px 100px;
+    }
+
+    .linksContainer{
+        gap: 20px;
+    }
+    
+}
+
+@media screen and (min-width: 1000px){
+    .menuIcon{
+        display: none;
+    }
+}
+

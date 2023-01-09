@@ -11,8 +11,6 @@ import { useEffect } from "react";
 import { auth } from "../reducers/firebase";
 
 function MyApp({ Component, pageProps }) {
-    console.log(process.env.NEXT_PUBLIC_FIREBASE_API_KEY);
-
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {

@@ -28,8 +28,6 @@ const NotificationBar = () => {
 
     const notifications = useSelector((state) => state.notification.items);
 
-    console.log(notifications);
-
     useEffect(() => {
         const timeout = setTimeout(() => {
             dispatch(removeNotification(0));

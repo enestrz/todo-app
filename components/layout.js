@@ -9,9 +9,12 @@ export default function Layout({ children }) {
         <>
             <div className={styles.layoutContainer}>
                 <Navigation />
-                {children}
+                <div className={styles.layoutWrapper}>
+                    <Sidebar />
+                    <main>{children}</main>
+                </div>
             </div>
-            {/* <Sidebar /> */}
+
             <NotificationBar />
         </>
     );

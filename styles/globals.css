@@ -46,14 +46,10 @@ a {
   border-bottom: 2px solid rgba(255, 255, 255, 0.651);
 }
 
-
-/* .item-hide{
+.hide-item{
   display: none;
 }
 
-.item-show{
-  display: block;
-} */
 
 
 @media (prefers-color-scheme: dark) {

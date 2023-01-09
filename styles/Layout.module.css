@@ -1,7 +1,32 @@
+
+/* For mobile  */
 .layoutContainer{
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
-    margin: 0 auto;
     height: 100vh;
 }
+
+.layoutWrapper{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    gap: 50px;
+    position: relative;
+}
+
+
+
+@media screen and (min-width: 600px){
+    .layoutContainer{
+        margin: 0 auto;
+        
+    }
+}
+
+@media screen and (min-width: 1250px){
+    .layoutContainer{
+        padding: 0;
+        
+    }
+}
+    
