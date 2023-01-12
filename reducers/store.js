@@ -12,6 +12,8 @@ const store = configureStore({
         notification: notificationSlice,
         user: userSlice,
     },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({ serializableCheck: false }),
 });
-// Hello world
+
 export default store;

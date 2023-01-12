@@ -6,22 +6,8 @@ import Layout from "../components/layout";
 import { IconContext } from "react-icons";
 import { Provider } from "react-redux";
 import store from "../reducers/store";
-import { onAuthStateChanged } from "firebase/auth";
-import { useEffect } from "react";
-import { auth } from "../reducers/firebase";
 
 function MyApp({ Component, pageProps }) {
-    useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                const uid = user.uid;
-                // console.log("User logged in, " + uid);
-            } else {
-                // console.log("No user logged in");
-            }
-        });
-    });
-
     return (
         <Provider store={store}>
             <IconContext.Provider

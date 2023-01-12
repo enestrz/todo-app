@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./Navigation.module.css";
 import { useSelector } from "react-redux";
 
-const UserSection = () => {
+const UserSection = ({ dispatch, auth, signOut, logOut }) => {
     const user = useSelector((state) => state.user);
+    const [currentUser, setCurrentUser] = useState({});
 
-    if (user.user && user.isLogged) {
+    useEffect(() => {
+        setCurrentUser(user);
+    }, [user]);
+
+    const handleLogOut = () => {
+        signOut(auth)
+            .then(() => {
+                dispatch(logOut());
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
+    if (currentUser.user && currentUser.isLogged) {
         return (
             <ul
                 className={[styles.linksContainer, styles.userSection].join(
@@ -14,9 +29,13 @@ const UserSection = () => {
                 )}
             >
                 <li>
-                    <Link href={"#"} className="nav-link">
+                    <div
+                        style={{ cursor: "pointer" }}
+                        onClick={() => handleLogOut()}
+                        className="nav-link"
+                    >
                         Logout
-                    </Link>
+                    </div>
                 </li>
             </ul>
         );

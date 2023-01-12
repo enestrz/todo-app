@@ -50,7 +50,7 @@ const NotificationBar = () => {
                             notification.type === "success"
                                 ? "#4BB543"
                                 : "#cc0000",
-                        top: index * 50,
+                        top: 75 + index * 50,
                     }}
                     variants={variants}
                     initial="hide"

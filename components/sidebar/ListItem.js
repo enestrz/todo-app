@@ -7,10 +7,23 @@ import { useDispatch } from "react-redux";
 import { deleteTodo } from "../../reducers/slices/notesSlice";
 import { motion } from "framer-motion";
 import EditItem from "./editItem";
+import { v4 as uuidv4 } from "uuid";
+import { addNotification } from "../../reducers/slices/notificationSlice";
 
 export default function ListItem({ id, title, content, date }) {
     const dispatch = useDispatch();
     const [isOpen, setIsOpen] = React.useState(false);
+
+    const handleDelete = (id) => {
+        dispatch(deleteTodo(id));
+        dispatch(
+            addNotification({
+                id: uuidv4(),
+                message: "Deleted successfuly",
+                type: "success",
+            })
+        );
+    };
 
     return (
         <div className={styles.listItemContainer}>
@@ -38,7 +51,7 @@ export default function ListItem({ id, title, content, date }) {
                         {/* Delete Item */}
                         <DropdownMenu.Item
                             className={styles.listItemDropdownItem}
-                            onClick={() => dispatch(deleteTodo(id))}
+                            onClick={() => handleDelete(id)}
                         >
                             Delete
                             <MdDeleteForever

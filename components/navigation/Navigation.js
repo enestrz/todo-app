@@ -5,6 +5,9 @@ import UserSection from "./userSection";
 import { MdMenu } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { toggleSidebar } from "../../reducers/slices/sidebarSlice";
+import { auth } from "../../reducers/firebase.js";
+import { logOut } from "../../reducers/slices/userSlice.js";
+import { signOut } from "firebase/auth";
 
 const Navigation = () => {
     const dispatch = useDispatch();
@@ -46,25 +49,20 @@ const Navigation = () => {
             </button>
 
             <Link href={"/"}>Breath Note</Link>
-            {/* <ul className={styles.linksContainer}>
+            <ul className={styles.linksContainer}>
                 <li>
                     <Link className="nav-link" href={"#"}>
-                        Dashboard
+                        Try Out
                     </Link>
                 </li>
-                <li>
-                    <Link className="nav-link" href={"#"}>
-                        About
-                    </Link>
-                </li>
-                <li>
-                    <Link className="nav-link" href={"#"}>
-                        Contact Us
-                    </Link>
-                </li>
-            </ul> */}
+            </ul>
 
-            <UserSection />
+            <UserSection
+                dispatch={dispatch}
+                auth={auth}
+                signOut={signOut}
+                logOut={logOut}
+            />
         </nav>
     );
 };
